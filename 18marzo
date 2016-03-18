@@ -1,0 +1,10 @@
+des <- sample(3:8, 40, replace=TRUE)
+dest <- ts(des, start=2005, frequency=12)
+tdesoc<-decompose(dest)
+names(tdesoc)
+plot(tdesoc)
+plot(decompose(tdesoc))
+trend <- tdesoc$trend
+season <- tdesoc$seasonal
+tdesoc.dom <- decompose(dest,type="mult")
+tdesoc.dom
